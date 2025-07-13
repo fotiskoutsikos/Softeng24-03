@@ -1,0 +1,138 @@
+/* CommonForm.css */
+
+/* Container for the form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+}
+
+/* Group each label and input */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+
+.form-group label {
+  width: 90px;          /* Fixed width for labels */
+  display: inline-block; /* Ensure the width is respected */
+  text-align: right;     /* Align the label text to the right */
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"]{
+  width: 250px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: normal;
+  padding: 1px 12px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 35px;
+  margin-left: -1px;
+}
+.form-group input[type="password"]{
+  width: 250px;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: normal;
+  padding: 1px 12px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 35px;
+  margin-left: -1px;
+}
+
+
+/* Hide Edge/IE show-password icons */
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+  display: none !important;
+}
+
+
+input[type=text]::-ms-reveal,
+input[type=text]::-ms-clear {
+}
+
+
+/* Attempt to hide Safari show-password icon */
+input[type=password]::-webkit-textfield-decoration-container {
+  display: none;
+}
+
+
+/* Center the submit button */
+.button-group {
+  text-align: center;
+}
+
+.button-group button {
+  padding: 10px 15px;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button-group button:hover {
+  background-color: #0056b3;
+}
+
+/* Result container styling */
+.result-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Table styling for results */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.results-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* For nested tables, if needed */
+.inner-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.inner-table th,
+.inner-table td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+.inner-table th {
+  background-color: #eaeaea;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}

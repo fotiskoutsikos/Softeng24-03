@@ -1,0 +1,72 @@
+.admin-nav {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc; /* Separator line */
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Removed display: flex and justify-content: center; for vertical stacking */
+    display: block; /* Ensure nav-list takes full width */
+    width: 200px; /* Set a fixed width for the nav menu */
+    margin: 0 auto; /* Center the nav menu if needed */
+  }
+  
+  .nav-item {
+    /* Removed margin: 0 20px; for horizontal spacing */
+    position: relative; /* For dropdown positioning */
+    cursor: pointer; /* Indicate clickable item */
+    margin-bottom: 5px; /* Add some vertical spacing between main nav items */
+  }
+  
+  .nav-item > span { /* Style the main nav item text (using span now instead of <a> for dropdown trigger) */
+      display: block; /* Make it a block element to take full width */
+      padding: 8px 15px;
+      text-decoration: none;
+      color: #333; /* Dark grey text */
+      background-color: #f0f0f0; /* Match nav background */
+      border: 1px solid transparent; /* For hover effect */
+  }
+  
+  
+  .nav-item:hover > span { /* Hover effect for main nav item */
+      background-color: #ddd; /* Lighter grey on hover */
+      border: 1px solid #ccc; /* Add border on hover to visually separate */
+  }
+  
+  
+  .dropdown {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* Dropdown relative to nav-item */
+    top: 100%; /* Below the nav-item */
+    left: 0;
+    background-color: #fff; /* White dropdown background */
+    border: 1px solid #ccc;
+    border-top: none; /* Remove top border for cleaner look */
+    z-index: 10; /* Ensure dropdown is on top */
+    display: none; /* Initially hidden */
+    width: 100%; /* Match dropdown width to nav item width */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1); /* Optional: Add a subtle shadow */
+  }
+  
+  .nav-item:hover > .dropdown,
+  .nav-item.active > .dropdown { /* Show dropdown on hover or active class (if you want to keep it open) */
+    display: block;
+  }
+  
+  
+  .dropdown li a {
+    padding: 10px 20px;
+    width: 100%; /* Dropdown items take full dropdown width */
+    display: block;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .dropdown li:hover > a {
+    background-color: #f0f0f0; /* Light grey on dropdown item hover */
+  }

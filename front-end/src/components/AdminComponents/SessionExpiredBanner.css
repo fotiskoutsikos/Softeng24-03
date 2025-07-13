@@ -1,0 +1,24 @@
+/* SessionExpiredBanner.css */
+.session-expired-banner {
+  background-color: #ffdddd;
+  color: #900;
+  padding: 10px;
+  text-align: center;
+  margin: 10px 0;
+  border: 1px solid #f99;
+  border-radius: 4px;
+}
+
+.session-expired-banner button {
+  padding: 8px 16px;
+  background-color: #900;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.session-expired-banner button:hover {
+  background-color: #b00;
+}

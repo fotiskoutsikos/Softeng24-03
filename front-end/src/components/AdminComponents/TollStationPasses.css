@@ -1,0 +1,36 @@
+/* TollStationPasses.css */
+
+.toll-station-passes-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.result-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;  /* Adds space between cells */
+  margin-top: 10px;
+}
+
+.result-container th,
+.result-container td {
+  padding: 10px;          /* Adds inner padding to cells */
+  border: 1px solid #ddd; /* Optional: adds borders */
+  text-align: left;
+}
+
+.result-container th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}

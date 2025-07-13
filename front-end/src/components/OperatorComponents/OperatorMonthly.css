@@ -1,0 +1,59 @@
+.operator-financials-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.back-button {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    /* Increase gap between Back and the list */
+}
+
+.financials-list {
+    width: 80%;
+}
+
+.month-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.month-header {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.month-header:hover {
+    background-color: #0056b3;
+}
+
+.transaction-details {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.results-table th {
+    background-color: #007bff;
+    color: white;
+}

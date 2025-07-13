@@ -1,0 +1,115 @@
+.reset-stations-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.reset-stations-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.upload-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.upload-label {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.upload-input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.file-preview {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: white;
+    overflow-x: auto; /* Enable horizontal scroll for wide tables */
+}
+
+.file-preview h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #555;
+}
+
+.preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.preview-table th, .preview-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.preview-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+}
+
+.action-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    background-color: #d9534f; /* Bootstrap danger color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.reset-button:hover:enabled {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+.reset-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+.success-message {
+    color: green;
+    background-color: #e6ffe6;
+    border: 1px solid green;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    background-color: #ffe0e0;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: auto; /* Enable horizontal scrolling for table */
+}

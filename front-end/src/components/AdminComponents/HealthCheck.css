@@ -1,0 +1,41 @@
+.health-check-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.health-check-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.health-check-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.health-check-row:last-child {
+  border-bottom: none;
+}
+
+.health-check-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.health-check-value {
+  color: #555;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
