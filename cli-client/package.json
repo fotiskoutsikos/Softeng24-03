@@ -1,0 +1,36 @@
+{
+  "name": "toll-interop",
+  "version": "1.0.0",
+  "bin": {
+    "se2403": "./cli.js"   
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "commander": "^12.1.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.1.0",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "moment-timezone": "^0.5.46",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.13.1",
+    "postman-collection": "^4.5.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
