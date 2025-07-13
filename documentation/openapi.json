@@ -1,0 +1,270 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Toll Interoperability API",
+        "description": "API documentation for the toll interoperability system.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9115/api",
+            "description": "Local development server"
+        }
+    ],
+    "paths": {
+        "/auth/login": {
+            "post": {
+                "summary": "User login",
+                "description": "Logs in a user and returns an access token and refresh token.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "username",
+                                    "password"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful login",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "accessToken": {
+                                            "type": "string"
+                                        },
+                                        "refreshToken": {
+                                            "type": "string"
+                                        },
+                                        "role": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "summary": "User logout",
+                "description": "Logs out a user by invalidating their refresh token.",
+                "responses": {
+                    "200": {
+                        "description": "Successful logout"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        },
+        "/operatorFinancials/{operatorID}": {
+            "get": {
+                "summary": "Retrieve financial transactions for an operator",
+                "description": "Returns monthly financial transactions for an operator, including payments to and from other operators.",
+                "parameters": [
+                    {
+                        "name": "operatorID",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "csv"
+                            ],
+                            "default": "json"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "year": {
+                                                "type": "integer"
+                                            },
+                                            "month": {
+                                                "type": "integer"
+                                            },
+                                            "transactions": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "otherOpID": {
+                                                            "type": "string"
+                                                        },
+                                                        "paid": {
+                                                            "type": "number"
+                                                        },
+                                                        "received": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "year,month,otherOpID,paid,received\\n2024,1,NAO,120.50,80.75"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid operator ID"
+                    }
+                }
+            }
+        },
+        "/tollStationPasses/{tollStationID}/{date_from}/{date_to}": {
+            "get": {
+                "summary": "Retrieve passes for a toll station",
+                "description": "Returns all passes for a given toll station within a date range.",
+                "parameters": [
+                    {
+                        "name": "tollStationID",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "20240101"
+                        }
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "20240131"
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "csv"
+                            ],
+                            "default": "json"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "stationID": {
+                                            "type": "string"
+                                        },
+                                        "nPasses": {
+                                            "type": "integer"
+                                        },
+                                        "passList": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "passID": {
+                                                        "type": "string"
+                                                    },
+                                                    "timestamp": {
+                                                        "type": "string"
+                                                    },
+                                                    "tagID": {
+                                                        "type": "string"
+                                                    },
+                                                    "passCharge": {
+                                                        "type": "number"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "text/csv": {
+                                "schema": {
+                                    "type": "string",
+                                    "example": "passID,timestamp,tagID,passCharge\\n1234,2024-01-01 10:00,NAOP123,2.50"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid toll station ID or date format"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "BearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+            "BearerAuth": []
+        }
+    ]
+}
